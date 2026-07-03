@@ -1,167 +1,225 @@
-🎓 Sistema de Banco de Dados para Faculdade
+# 🎓 Sistema de Banco de Dados para Faculdade
 
-Projeto desenvolvido para modelagem de um banco de dados relacional capaz de atender às necessidades de uma instituição de ensino, contemplando o gerenciamento de alunos, cursos, disciplinas, professores, turmas, matrículas e notas.
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-025E8C?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 
-Embora tenha sido desenvolvido como atividade acadêmica, o projeto foi estruturado seguindo princípios de modelagem relacional utilizados em sistemas reais.
+## 📖 Sobre o projeto
 
-📌 Objetivo
+Este projeto consiste na modelagem e implementação de um **Banco de Dados Relacional** para uma instituição de ensino superior.
 
-Projetar e implementar um banco de dados utilizando MySQL, aplicando todo o processo de modelagem:
+A proposta surgiu como atividade prática da disciplina de **Banco de Dados**, tendo como objetivo desenvolver uma base de dados capaz de armazenar informações acadêmicas de forma organizada, segura e escalável.
 
-Levantamento de requisitos
-Modelagem conceitual
-Modelagem lógica
-Modelagem física
-Implementação em SQL
+Durante o desenvolvimento foram aplicados conceitos de:
 
-O resultado é uma base de dados preparada para servir de suporte a um sistema acadêmico.
+- Análise de requisitos
+- Modelagem Conceitual
+- Modelagem Lógica
+- Modelagem Física
+- SQL
+- Integridade Referencial
+- Normalização de Dados
 
-🚀 Tecnologias utilizadas
-SQL
-MySQL
-Modelagem Relacional
-Chaves Primárias
-Chaves Estrangeiras
-Relacionamentos 1:N
-Relacionamentos N:N
-Integridade Referencial
-Normalização de Dados
-📚 Requisitos atendidos
+Embora seja um projeto acadêmico, ele foi desenvolvido seguindo práticas utilizadas em projetos reais de desenvolvimento de software.
 
-O banco foi projetado para armazenar informações de:
+---
 
-Alunos
-Professores
-Cursos
-Disciplinas
-Turmas
-Matrículas
-Telefones
-E-mails
-Endereços
-Notas
+# 🚀 Objetivos
 
-Além disso, permite:
+Projetar um banco de dados capaz de gerenciar:
 
-cadastrar alunos e professores;
-vincular alunos aos cursos;
-organizar turmas por semestre;
-associar disciplinas aos cursos;
-definir quais professores ministram cada disciplina em cada turma;
-registrar notas dos alunos.
-🗂 Estrutura do banco
+- Alunos
+- Professores
+- Cursos
+- Disciplinas
+- Turmas
+- Matrículas
+- Notas
+- Telefones
+- E-mails
+- Endereços
+
+O sistema foi estruturado para servir como base para futuras aplicações acadêmicas, como sistemas de matrícula, portais do aluno e sistemas administrativos.
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+- MySQL
+- SQL
+- Modelagem Relacional
+- Git
+- GitHub
+
+---
+
+# 📚 Conceitos Aplicados
+
+Durante o desenvolvimento foram utilizados diversos conceitos importantes de Banco de Dados Relacionais:
+
+- Chaves Primárias (PRIMARY KEY)
+- Chaves Estrangeiras (FOREIGN KEY)
+- Relacionamentos 1:N
+- Relacionamentos N:N
+- Tabelas Associativas
+- Integridade Referencial
+- Normalização
+- Restrições (`NOT NULL`, `UNIQUE`)
+- Auto Increment (`AUTO_INCREMENT`)
+
+---
+
+# 🗂️ Estrutura do Banco
 
 O projeto possui as seguintes tabelas:
 
-tbl_aluno
-tbl_telefone_aluno
-tbl_email_aluno
-tbl_endereco
+| Tabela | Finalidade |
+|---------|------------|
+| `tbl_aluno` | Cadastro de alunos |
+| `tbl_telefone_aluno` | Telefones dos alunos |
+| `tbl_email_aluno` | E-mails dos alunos |
+| `tbl_endereco` | Endereços dos alunos |
+| `tbl_professor` | Cadastro de professores |
+| `tbl_telefone_professor` | Telefones dos professores |
+| `tbl_email_professor` | E-mails dos professores |
+| `tbl_curso` | Cursos oferecidos |
+| `tbl_disciplina` | Disciplinas dos cursos |
+| `tbl_turma` | Turmas de cada curso |
+| `tbl_aluno_curso` | Matrículas dos alunos |
+| `tbl_curso_disciplina` | Disciplinas pertencentes aos cursos |
+| `tbl_professor_turma_disciplina` | Professor responsável por determinada disciplina em uma turma |
+| `tbl_aluno_disciplina` | Notas dos alunos |
 
-tbl_curso
-tbl_disciplina
-tbl_turma
+---
 
-tbl_professor
-tbl_telefone_professor
-tbl_email_professor
+# 🔗 Relacionamentos
 
-tbl_aluno_curso
-tbl_curso_disciplina
-tbl_professor_turma_disciplina
-tbl_aluno_disciplina
+O banco contempla os seguintes relacionamentos:
 
-Total de tabelas: 13
+- Um aluno pode possuir diversos telefones.
+- Um aluno pode possuir diversos e-mails.
+- Um aluno possui um endereço.
+- Um curso possui diversas disciplinas.
+- Um curso possui diversas turmas.
+- Um professor pode ministrar várias disciplinas.
+- Um aluno pode estar matriculado em vários cursos.
+- Uma disciplina pode pertencer a vários cursos.
+- Um aluno pode cursar diversas disciplinas.
+- Cada disciplina cursada possui uma nota.
+- Um professor pode ministrar uma disciplina em diferentes turmas.
 
-🔗 Principais relacionamentos
-Um aluno possui
-vários telefones
-vários e-mails
-um endereço
-Um curso possui
-várias turmas
-várias disciplinas
-Um aluno pode cursar
-vários cursos
-Uma disciplina pode pertencer
-a vários cursos
-Um professor pode ministrar
-várias disciplinas
-em diferentes turmas
-Um aluno pode cursar
-várias disciplinas
-recebendo uma nota em cada uma
-💡 Conceitos aplicados
+---
 
-Durante o desenvolvimento foram utilizados diversos conceitos importantes de bancos de dados relacionais:
+# 📂 Estrutura do Projeto
 
-✔ Modelagem Entidade-Relacionamento
-
-✔ Normalização
-
-✔ Integridade Referencial
-
-✔ Chaves Primárias
-
-✔ Chaves Estrangeiras
-
-✔ Tabelas Associativas
-
-✔ Relacionamentos Muitos-para-Muitos
-
-✔ Auto Increment
-
-✔ Restrições de unicidade (UNIQUE)
-
-✔ Restrições de obrigatoriedade (NOT NULL)
-
-📂 Estrutura do projeto
-/
+```
+📦 sistema-faculdade
 │
 ├── database.sql
+├── README.md
 ├── modelo_conceitual.png
-├── modelo_logico.png
-└── README.md
-▶ Como executar
-Clone o repositório
+└── modelo_logico.png
+```
+
+---
+
+# ▶️ Como executar
+
+### 1. Clone o repositório
+
+```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
-Abra o MySQL.
-Execute o arquivo:
+```
+
+### 2. Acesse o projeto
+
+```bash
+cd sistema-faculdade
+```
+
+### 3. Execute o script SQL
+
+Abra o MySQL Workbench (ou outro cliente SQL) e execute o arquivo:
+
+```sql
 database.sql
+```
 
 O script criará automaticamente:
 
-banco de dados
-tabelas
-relacionamentos
-restrições
-📈 Possíveis melhorias
+- Banco de dados
+- Todas as tabelas
+- Chaves primárias
+- Chaves estrangeiras
+- Relacionamentos
+- Restrições de integridade
 
-Como evolução deste projeto, poderiam ser implementados:
+---
 
-Procedures
-Views
-Triggers
-Índices para otimização
-Consultas complexas (JOIN)
-Controle de usuários e permissões
-Histórico de matrículas
-Controle de frequência
-Sistema de horários
-Registro de semestres letivos
-🎯 Competências demonstradas
+# 📈 Melhorias Futuras
 
-Este projeto evidencia conhecimentos em:
+Como evolução deste projeto, pretendo implementar:
 
-Modelagem de Banco de Dados
-SQL
-MySQL
-Análise de Requisitos
-Estruturação de Dados
-Organização de Sistemas Relacionais
-Boas práticas de modelagem
-👨‍💻 Sobre mim
+- Procedures
+- Views
+- Triggers
+- Índices (INDEX)
+- Consultas complexas utilizando JOIN
+- Inserção de dados de exemplo (Seed)
+- Controle de usuários
+- Histórico de matrículas
+- Controle de frequência
+- Sistema de horários das turmas
 
-Sou profissional em transição de carreira para a área de Tecnologia, desenvolvendo projetos práticos para consolidar conhecimentos em Banco de Dados, Desenvolvimento Back-end e Engenharia de Software.
+---
 
-Meu objetivo é construir soluções organizadas, escaláveis e alinhadas às boas práticas de desenvolvimento.
+# 💼 Competências Demonstradas
+
+Este projeto demonstra conhecimentos em:
+
+- Modelagem de Banco de Dados
+- SQL
+- MySQL
+- Engenharia de Dados
+- Modelagem Relacional
+- Normalização
+- Integridade Referencial
+- Estruturação de Sistemas
+- Organização de Código SQL
+- Versionamento com Git
+
+---
+
+# 🎯 Aprendizados
+
+Durante o desenvolvimento deste projeto foi possível aprofundar conhecimentos sobre:
+
+- Levantamento de requisitos
+- Tradução de regras de negócio para o banco de dados
+- Modelagem de relacionamentos complexos
+- Organização de estruturas relacionais
+- Aplicação de boas práticas em SQL
+
+Este projeto representa um importante passo na minha transição de carreira para a área de Tecnologia, consolidando conhecimentos fundamentais em Banco de Dados e Desenvolvimento Back-end.
+
+---
+
+# 👨‍💻 Autor
+
+**Well**
+
+Estudante de Análise e Desenvolvimento de Sistemas, em transição de carreira para a área de Tecnologia.
+
+Atualmente desenvolvendo projetos voltados para:
+
+- Banco de Dados
+- SQL
+- Python
+- Desenvolvimento Back-end
+- Engenharia de Software
+
+Meu objetivo é construir soluções bem estruturadas, escaláveis e alinhadas às boas práticas de desenvolvimento.
+
+---
+
+⭐ Se este projeto foi útil ou interessante para você, deixe uma estrela no repositório!
